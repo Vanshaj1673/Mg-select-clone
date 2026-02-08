@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MG Select Clone</title>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS (Compiled from SCSS) -->
+    <link rel="stylesheet" href="dist/css/main.css">
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero">
+
+    <video class="hero-video" autoplay muted loop playsinline>
+        <source src="assets/video/hero_video.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="logo">
+        <img src="assets/mg-select-final-logo-light.webp" alt="MG Logo">
+    </div>
+
+    
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+    </div>
+
+
+    <div class="hero-content">
+        <h1>All New MG Cyberster in Irises Cyan</h1>
+
+        <button class="cta-btn">
+            <span class="btn-text">KNOW MORE</span>
+            <span class="btn-arrow">↗</span>
+        </button>
+    </div>
+
+    <div class="sound-btn">
+        <button id="sound-btn">
+            <img id="sound-icon" src="assets/svg/sound_off.svg">
+        </button>
+    </div>
+
+</section>
+
+<!-- ================= CAR SLIDER ================= -->
+<section class="car-slider">
+
+  <div class="slider-bg"></div>
+
+  <div class="logo">
+    <img
+      id="mg-logo"
+      src="assets/mg-select-final-logo-light.webp"
+      alt="MG Select"
+    />
+  </div>
+
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+  </div>
+
+  <button class="nav prev" aria-label="Previous">
+  <img
+    src="assets/svg/left-arrow.svg"
+    alt="Previous"
+  />
+</button>
+
+<button class="nav next" aria-label="Next">
+  <img
+    src="assets/svg/right-arrow.svg"
+    alt="Next"
+  />
+</button>
+
+
+  <img
+    class="car-image"
+    src=""
+    alt="Car"
+  />
+
+  <div class="car-content">
+    <h2 class="car-title"></h2>
+    <p class="car-desc"></p>
+
+    <button class="explore-btn">
+      EXPLORE NOW →
+    </button>
+
+    <p class="download">
+      DOWNLOAD BROCHURE ↓
+    </p>
+  </div>
+
+  <div class="toggle-mode" id="toggle-mode">
+    <svg id="night-icon" viewBox="0 0 24 24" fill="none">
+      <path
+        d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79Z"
+        stroke="white"
+        stroke-width="1.5"
+      />
+    </svg>
+
+    <svg id="day-icon" viewBox="0 0 24 24" fill="none">
+      <circle
+        cx="12"
+        cy="12"
+        r="5"
+        stroke="white"
+        stroke-width="1.5"
+      />
+    </svg>
+  </div>
+
+</section>
+
+
+<!-- ================= WELCOME / CAROUSEL ================= -->
+<section class="welcome-section">
+
+  <p class="welcome-small">WELCOME TO</p>
+
+  <img
+    src="assets/mg-select-final-logo-dark.webp"
+    alt="MG Select"
+    class="welcome-logo"
+  />
+
+  <div class="welcome-text-wrapper">
+    <h2 class="welcome-title">A New-Era of Luxury</h2>
+
+    <p class="welcome-description">
+      A new language of luxury is unfolding.<br>
+      A luxury that is no longer about possessions, but about creating memorable experiences.<br>
+      Where sustainability and innovation intertwine in perfect harmony.<br>
+      Welcome to the world of new-age luxury.<br>
+      Introducing, MG Select.
+    </p>
+  </div>
+
+  <!-- CSS ONLY MOVING CAROUSEL -->
+  <div class="luxury-carousel">
+    <div class="luxury-track">
+
+      <!-- ORIGINAL SET -->
+      <div class="luxury-slide">
+        <img src="assets/carousel/img1.webp" alt="">
+      </div>
+      <div class="luxury-slide">
+        <img src="assets/carousel/img2.webp" alt="">
+      </div>
+      <div class="luxury-slide">
+        <img src="assets/carousel/img3.webp" alt="">
+      </div>
+      <div class="luxury-slide">
+        <img src="assets/carousel/img4.webp" alt="">
+      </div>
+      <div class="luxury-slide">
+        <img src="assets/carousel/img5.webp" alt="">
+      </div>
+      <div class="luxury-slide">
+        <img src="assets/carousel/img6.webp" alt="">
+      </div>
+      <div class="luxury-slide">
+        <img src="assets/carousel/img7.webp" alt="">
+      </div>
+      <div class="luxury-slide">
+        <img src="assets/carousel/img8.webp" alt="">
+      </div>
+      <div class="luxury-slide">
+        <img src="assets/carousel/img9.webp" alt="">
+      </div>
+      <div class="luxury-slide">
+        <img src="assets/carousel/img10.webp" alt="">
+      </div>
+
+      <!-- DUPLICATED SET (for seamless loop) -->
+      <div class="luxury-slide">
+        <img src="assets/carousel/img1.webp" alt="">
+      </div>
+      <div class="luxury-slide">
+        <img src="assets/carousel/img2.webp" alt="">
+      </div>
+      <div class="luxury-slide">
+        <img src="assets/carousel/img3.webp" alt="">
+      </div>
+      <div class="luxury-slide">
+        <img src="assets/carousel/img4.webp" alt="">
+      </div>
+      <div class="luxury-slide">
+        <img src="assets/carousel/img5.webp" alt="">
+      </div>
+      <div class="luxury-slide">
+        <img src="assets/carousel/img6.webp" alt="">
+      </div>
+      <div class="luxury-slide">
+        <img src="assets/carousel/img7.webp" alt="">
+      </div>
+      <div class="luxury-slide">
+        <img src="assets/carousel/img8.webp" alt="">
+      </div>
+      <div class="luxury-slide">
+        <img src="assets/carousel/img9.webp" alt="">
+      </div>
+      <div class="luxury-slide">
+        <img src="assets/carousel/img10.webp" alt="">
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+<!-- EXPERIENCE SECTION -->
+<!-- EXPERIENCE SECTION -->
+<section class="experience-section">
+
+  <!-- Background -->
+  <div class="experience-bg">
+    <img src="assets/dealer-carousel-bg.webp" alt="">
+  </div>
+
+  <!-- Top UI (same as hero) -->
+  <div class="experience-top">
+    <div class="logo">
+      <img src="assets/mg-select-final-logo-dark.webp" alt="MG Select">
+    </div>
+
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Custom Navigation (same as car slider) -->
+  <button class="nav prev experience-prev">
+    <img src="assets/svg/left-arrow.svg" alt="Previous">
+  </button>
+
+  <button class="nav next experience-next">
+    <img src="assets/svg/right-arrow.svg" alt="Next">
+  </button>
+
+  <!-- Bootstrap Carousel -->
+  <div
+    id="experienceCarousel"
+    class="carousel slide"
+    data-bs-ride="carousel"
+    data-bs-interval="5000"
+  >
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <div class="experience-slide">
+          <img src="assets/Cities/ahemdabad.webp" alt="Ahmedabad">
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="experience-slide">
+          <img src="assets/Cities/bengaluru_electronic_city.webp" alt="Bengaluru">
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="experience-slide">
+          <img src="assets/Cities/bengaluru_richmond_circle.webp" alt="Bengaluru">
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="experience-slide">
+          <img src="assets/Cities/chandigarh.webp" alt="Chandigarh">
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="experience-slide">
+          <img src="assets/Cities/chennai.webp" alt="Chennai">
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="experience-slide">
+          <img src="assets/Cities/gurugram.webp" alt="Gurugram">
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="experience-slide">
+          <img src="assets/Cities/hyderabad.webp" alt="Hyderabad">
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="experience-slide">
+          <img src="assets/Cities/kochi.webp" alt="Kochi">
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="experience-slide">
+          <img src="assets/Cities/kolkata.webp" alt="Kolkata">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+
+<section class="heritage-section">
+
+  <!-- Top Branding -->
+  <div class="heritage-top">
+    <img
+      src="assets/mg-select-final-logo-dark.webp"
+      alt="MG Select"
+      class="heritage-logo"
+    />
+
+    <p class="heritage-eyebrow">OUR HERITAGE</p>
+    <span class="heritage-line"></span>
+  </div>
+
+  <!-- Heading -->
+  <h2 class="heritage-title">
+    A heritage written in motion.
+  </h2>
+
+  <!-- Timeline Cards -->
+  <div class="heritage-timeline">
+
+    <div class="heritage-card large">
+      <p class="year">1924</p>
+      <img src="assets/heritage/1924.webp" alt="">
+      <span class="tag">+ A STAR IS BORN</span>
+    </div>
+
+    <div class="heritage-card">
+      <p class="year">1930</p>
+      <img src="assets/heritage/1930.webp" alt="">
+      <span class="tag">+ THE BIRTH OF MG CAR CLUB</span>
+    </div>
+
+    <div class="heritage-card">
+      <p class="year">1933</p>
+      <img src="assets/heritage/1933.webp" alt="">
+      <span class="tag">+ IT'S A WINNER</span>
+    </div>
+
+    <div class="heritage-card">
+      <p class="year">1945</p>
+      <img src="assets/heritage/1945.webp" alt="">
+      <span class="tag">+ A BRITISH ICON, AN AMERICAN SENSATION</span>
+    </div>
+
+    <div class="heritage-card">
+      <p class="year">1959</p>
+      <img src="assets/heritage/1959.webp" alt="">
+      <span class="tag">+ AN ALL-TIME CLASSIC</span>
+    </div>
+
+  </div>
+
+  <!-- Bottom Scale -->
+  <div class="heritage-scale">
+    <span class="major"></span>
+    <span></span><span></span><span></span><span></span>
+    <span class="major"></span>
+    <span></span><span></span><span></span><span></span>
+    <span class="major"></span>
+    <span></span><span></span><span></span><span></span>
+    <span class="major"></span>
+  </div>
+
+</section>
+
+<!-- HAMBURGER -->
+<div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+</div>
+
+<!-- MENU OVERLAY -->
+<div class="menu-overlay" id="menuOverlay">
+
+  <div class="menu-header">
+    <img src="assets/mg-select-final-logo-dark.webp" alt="MG Select">
+    <div class="menu-close" id="menuClose"></div>
+  </div>
+
+  <div class="menu-tabs">
+    <button class="tab active">Select Your Ride</button>
+    <button class="tab">MG Services</button>
+  </div>
+
+  <div class="menu-content">
+    <!-- LEFT -->
+    <div class="menu-left">
+      <div class="menu-item active">
+        <h3>CYBERSTER</h3>
+        <p>Ex-showroom price: ₹ 74,99,000</p>
+      </div>
+
+      <div class="menu-item">
+        <h3>M9</h3>
+        <p>Ex-showroom price: ₹ 70,90,000</p>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="menu-right">
+      <h1>CYBERSTER</h1>
+      <p>Meet the boldest expressions of MG innovation.</p>
+
+      <div class="menu-actions">
+        <button class="menu-btn">EXPLORE ↗</button>
+        <a href="#">E-BOOK ↗</a>
+        <a href="#">BOOK TEST DRIVE ↗</a>
+        <a href="#">REQUEST CALLBACK ↗</a>
+      </div>
+
+      <img class="menu-car" src="assets/cybie-header.webp" alt="car image">
+    </div>
+  </div>
+</div>
+
+
+<footer class="site-footer">
+
+  <!-- Top row -->
+  <div class="footer-top">
+    <img
+      src="assets/mg-select-final-logo-light.webp"
+      alt="MG Select"
+      class="footer-logo"
+    />
+
+    <div class="newsletter">
+      <h3>Subscribe to our newsletter</h3>
+
+      <div class="newsletter-form">
+        <input type="email" placeholder="Enter email" />
+        <button>
+          SIGN UP <span>↗</span>
+        </button>
+      </div>
+
+      <label class="privacy">
+        <input type="checkbox" />
+        I agree to the <a href="#">privacy policy</a>.
+      </label>
+    </div>
+  </div>
+
+  <!-- Links row -->
+  <div class="footer-links">
+    <div class="footer-column">
+      <h4>Cyberster</h4>
+      <a href="#">E-BOOK</a>
+      <a href="#">Test Drive</a>
+      <a href="#">Register Interest</a>
+    </div>
+
+    <div class="footer-column">
+      <h4>M9</h4>
+    </div>
+
+    <div class="footer-column">
+      <h4>Network</h4>
+    </div>
+
+    <div class="footer-column">
+      <h4>Contact Us</h4>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <p>©2026 | MG SELECT | Privacy Policy | Terms of Service | Referral Program</p>
+
+    <div class="social-icons">
+      <a href="#">Instagram</a>
+      <a href="#">X</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+
+</footer>
+
+
+
+<!-- ================= LIBRARIES ================= -->
+
+<!-- Swiper JS MUST COME FIRST -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- YOUR SCRIPT MUST COME LAST -->
+<script src="script.js"></script>
+
+</body>
+</html>
