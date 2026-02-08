@@ -1,0 +1,49 @@
+
+
+/// Convert px to rem
+/// @param {Number} $px - Pixel value to convert
+/// @param {Number} $base - Base font size (default: 16px)
+/// @return {Number} - Rem value
+@function rem($px, $base: 16) {
+  @return #{$px / $base}rem;
+}
+
+/// Convert px to em
+/// @param {Number} $px - Pixel value to convert
+/// @param {Number} $base - Base font size (default: 16px)
+/// @return {Number} - Em value
+@function em($px, $base: 16) {
+  @return #{$px / $base}em;
+}
+
+/// Calculate percentage
+/// @param {Number} $target - Target value
+/// @param {Number} $context - Context value
+/// @return {Number} - Percentage value
+@function percent($target, $context) {
+  @return percentage($target / $context);
+}
+
+/// Get z-index from map
+/// @param {String} $key - Key name for z-index
+/// @return {Number} - Z-index value
+@function z($key) {
+  $z-indexes: (
+    background: -2,
+    overlay: -1,
+    base: 0,
+    content: 1,
+    header: 10,
+    modal: 100,
+  );
+  
+  @return map-get($z-indexes, $key);
+}
+
+/// Lighten color with opacity
+/// @param {Color} $color - Base color
+/// @param {Number} $amount - Opacity amount (0-1)
+/// @return {Color} - RGBA color
+@function fade($color, $amount) {
+  @return rgba($color, $amount);
+}
