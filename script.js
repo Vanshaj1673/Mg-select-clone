@@ -1,6 +1,4 @@
-/* ===============================
-   HERO SOUND TOGGLE
-=============================== */
+
 
 const heroVideo = document.querySelector(".hero-video");
 const soundBtn = document.getElementById("sound-btn");
@@ -20,9 +18,7 @@ soundBtn.addEventListener("click", () => {
 });
 
 
-/* ===============================
-   CAR DATA
-=============================== */
+
 
 const cars = [
   {
@@ -47,9 +43,7 @@ let currentIndex = 0;
 let nightMode = true;
 
 
-/* ===============================
-   ELEMENT SELECTORS
-=============================== */
+
 
 const carImg = document.querySelector(".car-image");
 const bg = document.querySelector(".slider-bg");
@@ -67,9 +61,7 @@ nightIcon.style.display = "block";
 dayIcon.style.display = "none";
 
 
-/* ===============================
-   AUTO SLIDE CONTROLLER
-=============================== */
+
 
 let autoSlideTimer = null;
 
@@ -91,9 +83,6 @@ function stopAutoSlide() {
 }
 
 
-/* ===============================
-   UPDATE SLIDER (DIRECTIONAL)
-=============================== */
 
 function updateSlider(direction) {
   const car = cars[currentIndex];
@@ -163,17 +152,13 @@ function updateSlider(direction) {
 }
 
 
-/* ===============================
-   INITIAL LOAD
-=============================== */
+
 
 updateSlider("next");
 startAutoSlide();
 
 
-/* ===============================
-   NAVIGATION
-=============================== */
+
 
 document.querySelector(".next").onclick = () => {
   stopAutoSlide();
@@ -190,9 +175,6 @@ document.querySelector(".prev").onclick = () => {
 };
 
 
-/* ===============================
-   DAY / NIGHT TOGGLE
-=============================== */
 
 toggleMode.onclick = () => {
   nightMode = !nightMode;
@@ -213,13 +195,6 @@ document.querySelector(".experience-prev")
   .addEventListener("click", () => experienceCarousel.prev());
 
 
-
-
-
-
-/* ===============================
-   HAMBURGER MENU
-=============================== */
 
 const hamburger = document.getElementById("hamburger");
 const menuOverlay = document.getElementById("menuOverlay");
@@ -254,7 +229,7 @@ const observer = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.6 // section must be mostly visible
+    threshold: 0.6 
   }
 );
 
