@@ -1,0 +1,34 @@
+
+
+.hero {
+  position: relative;
+  
+ 
+  &-video {
+    @include absolute-cover;
+    @include img-cover;
+    z-index: $z-index-background;
+  }
+  
+  
+  
+  .overlay {
+    @include overlay($overlay-dark);
+    z-index: $z-index-overlay;
+    @include transition(background $transition-medium $transition-ease);
+  }
+  
+
+  &-content {
+    position: absolute;
+    bottom: $hero-content-bottom;
+    left: $hero-content-left;
+    max-width: $max-width-content;
+    
+    h1 {
+      font-size: $font-size-3xl;
+      font-weight: $font-weight-normal;
+      margin-bottom: $spacing-md;
+    }
+  }
+}

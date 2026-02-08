@@ -1,0 +1,134 @@
+
+.heritage-section {
+  height: $viewport-height;
+  padding: $spacing-4xl $spacing-4xl $spacing-3xl;
+
+  background: $color-white;
+  color: $text-dark;
+
+  @include flex-column;
+  justify-content: space-between;
+
+  overflow-x: hidden; 
+
+
+
+  .heritage-top {
+    text-align: center;
+  }
+
+  .heritage-logo {
+  height: $logo-height-small;
+  margin: 0 auto 8px; 
+  display: block;
+}
+
+
+
+  .heritage-eyebrow {
+    font-size: $font-size-sm;
+    @include text-uppercase-spaced;
+    margin-bottom: $spacing-xs;
+  }
+
+  .heritage-line {
+    display: inline-block;
+    width: 120px;
+    height: 1px;
+    background: $color-medium-gray;
+  }
+
+ 
+  .heritage-title {
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-normal;
+    margin: $spacing-2xl 0 $spacing-3xl;
+  }
+
+ 
+
+  .heritage-timeline {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-3xl;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding-bottom: $spacing-lg;
+
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+ 
+
+  .heritage-card {
+    position: relative;
+    min-width: $heritage-card-min-width;
+    @include transition-default(transform);
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    &.large {
+      min-width: $heritage-card-large-min-width;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      border-radius: $spacing-xs;
+    }
+
+    .year {
+      text-align: center;
+      font-size: $font-size-xl;
+      margin-bottom: $spacing-sm;
+      font-weight: $font-weight-normal;
+    }
+
+    .tag {
+      position: absolute;
+      top: $spacing-lg;
+      left: $spacing-lg;
+
+      background: $overlay-dark-strong;
+      color: $color-white;
+
+      font-size: $font-size-xs;
+      padding: 6px 12px;
+      border-radius: $border-radius-sm;
+
+      @include text-uppercase-spaced;
+    }
+  }
+
+
+
+  .heritage-scale {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    padding: 0 $spacing-2xl;
+
+    span {
+      width: 1px;
+      height: 10px;
+      background: lighten($color-medium-gray, 15%);
+      @include transition-default(background);
+
+      &.major {
+        height: 26px;
+        background: $text-dark;
+      }
+
+      &:hover {
+        background: $text-dark;
+      }
+    }
+  }
+}
