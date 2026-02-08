@@ -1,0 +1,28 @@
+
+
+.page-wrapper {
+  height: $viewport-height;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+
+  @include custom-scrollbar;
+
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  section {
+    @include section-full-height;
+    scroll-snap-align: start;
+  }
+
+  footer {
+    height: $viewport-height;
+    scroll-snap-align: start;
+  }
+}
