@@ -1,0 +1,31 @@
+
+
+input[type="email"],
+input[type="text"],
+textarea {
+  padding: $btn-padding-vertical;
+  background: $bg-dark-subtle;
+  border: none;
+  color: $color-white;
+  font-size: $font-size-base;
+  @include transition-default;
+  
+  &::placeholder {
+    color: $text-muted;
+  }
+  
+  &:focus {
+    outline: none;
+    background: lighten($bg-dark-subtle, 3%);
+  }
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  accent-color: $color-white;
+}
+
+label {
+  cursor: pointer;
+  @include transition-default(color);
+}

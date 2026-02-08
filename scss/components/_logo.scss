@@ -1,0 +1,16 @@
+
+.logo {
+  position: absolute;
+  top: $hero-logo-top;
+  @include absolute-center-x;
+  z-index: 5;
+  
+  img {
+    height: $logo-height;
+    @include transition(opacity $transition-medium $transition-ease);
+  }
+  
+  #mg-logo {
+    @include transition(opacity $transition-medium $transition-ease);
+  }
+}

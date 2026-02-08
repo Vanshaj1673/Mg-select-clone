@@ -1,0 +1,69 @@
+
+.nav {
+  position: absolute;
+  @include absolute-center-y;
+
+  width: $icon-size-nav;
+  height: $icon-size-nav;
+  border-radius: $border-radius-circle;
+  border: none;
+
+  background: $bg-transparent-light;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5;
+  @include transition-default;
+
+  &:hover {
+    background: rgba($color-white, 0.5);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  &:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+
+  &.prev {
+    left: 12px;
+  }
+
+  &.next {
+    right: 12px;
+  }
+
+
+
+  img,
+  svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+    pointer-events: none;
+  }
+
+  img {
+    filter: invert(1);
+  }
+
+  svg {
+    stroke: $color-white;
+    fill: none;
+  }
+
+ /
+
+  &.next {
+    img {
+      transform: scale(1.15);          
+      filter: invert(1) drop-shadow(0 0 0 $color-white);
+    }
+
+    svg {
+      stroke-width: 2.5;               
+    }
+  }
+}

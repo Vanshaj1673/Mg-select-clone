@@ -1,0 +1,226 @@
+
+.cta-btn {
+  @include flex-between;
+  align-items: center;
+  width: $btn-width-cta;
+  padding: $btn-padding-vertical $btn-padding-horizontal;
+  border: $border-width solid $border-light;
+  background: transparent;
+  color: $color-white;
+  font-size: $font-size-sm;
+  @include text-uppercase-spaced;
+  cursor: pointer;
+  @include transition-default;
+  
+  &:hover {
+    background: $color-white;
+    color: $color-black;
+    
+    .btn-arrow {
+      transform: translateX(6px);
+    }
+  }
+  
+  .btn-arrow {
+    font-size: $font-size-lg;
+    @include transition(transform $transition-fast $transition-ease);
+  }
+}
+
+
+
+.explore-btn {
+  padding: $spacing-md $spacing-xl;
+  background: transparent;
+  border: $border-width solid $color-white;
+  color: $color-white;
+  font-size: $font-size-sm;
+  @include text-uppercase-spaced;
+  cursor: pointer;
+  @include transition-default;
+  
+  &:hover {
+    background: $color-white;
+    color: $color-black;
+  }
+}
+
+
+
+.sound-btn {
+  position: absolute;
+  bottom: $spacing-lg;
+  left: $spacing-lg;
+  
+  button {
+    @include button-reset;
+    cursor: pointer;
+    @include transition-default(transform);
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  
+  img {
+    width: $icon-size-sm;
+    filter: invert(1);
+  }
+}
+
+
+.download {
+  margin-top: $spacing-md;
+  font-size: $font-size-sm;
+  @include text-uppercase-spaced;
+  cursor: pointer;
+  @include transition-default(opacity);
+  
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+
+.hamburger {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  width: 32px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 3000;
+
+  span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: $color-white;
+    transition: transform 0.4s ease, top 0.4s ease, background 0.3s ease;
+  }
+
+  span:nth-child(1) {
+    top: 6px;
+  }
+
+  span:nth-child(2) {
+    top: 14px;
+  }
+
+  &.active {
+    span {
+      background: $color-black; 
+    }
+
+    span:nth-child(1) {
+      top: 10px;
+      transform: rotate(45deg);
+    }
+
+    span:nth-child(2) {
+      top: 10px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &.dark {
+    span {
+      background: $color-black;
+    }
+  }
+}
+
+
+
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 2500;
+  display: none;
+  flex-direction: column;
+  padding: 40px 60px;
+  color:#000
+}
+
+.menu-overlay.open {
+  display: flex;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-header img {
+  height: 28px;
+}
+
+.menu-tabs {
+  display: flex;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.menu-tabs .tab {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding-bottom: 6px;
+  border-bottom: 2px solid transparent;
+}
+
+.menu-tabs .tab.active {
+  border-color: #000;
+}
+
+.menu-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 80px;
+  margin-top: 60px;
+}
+
+.menu-left {
+  border-right: 1px solid #ddd;
+  padding-right: 40px;
+}
+
+.menu-item {
+  opacity: 0.4;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+.menu-item.active {
+  opacity: 1;
+  background: #ffe9e9;
+  padding: 20px;
+}
+
+.menu-right h1 {
+  font-size: 64px;
+}
+
+.menu-actions {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.menu-btn {
+  border: 1px solid #000;
+  padding: 14px 28px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-car {
+  margin-top: 40px;
+  width: 520px;
+}
+
