@@ -1,0 +1,281 @@
+.inventory {
+  color: $color-white;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  background-color: $color-black;
+
+  &__bg-container {
+    @include absolute-cover;
+  }
+
+  &__bg {
+    @include absolute-cover;
+    @include background-cover;
+    transition: opacity $transition-slow $transition-ease;
+
+    &--current {
+      z-index: 0;
+
+      &::after {
+        content: '';
+        @include absolute-cover;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+      }
+    }
+
+    &--next {
+      z-index: 1;
+      opacity: 0;
+    }
+  }
+
+  &__logo-container {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: $z-index-header;
+  }
+
+  &__swiper {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+  }
+
+  &__car-img {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 75vw;
+    height: auto;
+    max-width: 1400px;
+    max-height: 85vh;
+    object-fit: contain;
+    z-index: 2;
+    transform: translateX(-50%);
+
+    @include respond-to(mobile) {
+      width: 95vw;
+      max-height: 60vh;
+      bottom: 10%;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 60px;
+    height: 60px;
+    border-radius: $border-radius-circle;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    @include transition-default;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    @include respond-to(mobile) {
+      width: 44px;
+      height: 44px;
+    }
+
+    &--prev {
+      left: 40px;
+    }
+
+    &--next {
+      right: 40px;
+    }
+  }
+
+  &__content-fixed {
+    position: absolute;
+    left: 80px;
+    bottom: 12%;
+    z-index: 10;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include respond-to(mobile) {
+      left: 20px;
+      bottom: 12%;
+      width: calc(100% - 40px);
+    }
+  }
+
+  &__title {
+    font-size: 56px;
+    font-weight: 400;
+    text-transform: none; // Title Case handled in HTML/JS
+    margin-bottom: 5px;
+    line-height: 1.1;
+
+    @include respond-to(mobile) {
+      font-size: 32px;
+    }
+  }
+
+  &__desc {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
+    font-weight: 300;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    @include respond-to(mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+  }
+
+  &__btn {
+    text-decoration: none;
+    color: $color-white;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    @include text-uppercase-spaced;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    @include transition-default(all);
+
+    &--explore {
+      padding: 12px 30px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 4px;
+      min-width: 200px;
+      justify-content: space-between;
+
+      &:hover {
+        background: $color-white;
+        color: $color-black;
+        border-color: $color-white;
+      }
+    }
+
+    &--download {
+      opacity: 0.8;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__bottom {
+    position: absolute;
+    bottom: 30px;
+    left: 80px;
+    width: calc(100% - 160px);
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    z-index: 10;
+
+    @include respond-to(mobile) {
+      left: 20px;
+      width: calc(100% - 40px);
+    }
+  }
+
+  &__mode-toggle {
+    @include button-reset;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    @include transition-default(transform);
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__progress-container {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: visible;
+  }
+
+  &__progress-track {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  &__progress-fill {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 3px;
+    width: 0;
+    background: $color-white;
+    transition: width 0.4s ease;
+  }
+}
+
+// Sub-components used in Inventory
+.car-nav {
+  &__icon {
+    width: 20px !important;
+    height: 20px !important;
+    stroke: rgba(255, 255, 255, 0.8);
+    stroke-width: 1.2;
+    display: block;
+  }
+}
+
+.car-btn {
+  &__icon {
+    width: 20px !important;
+    height: 20px !important;
+    stroke-width: 1.5;
+    display: block;
+
+    &--download {
+      width: 18px !important;
+      height: 18px !important;
+    }
+  }
+}
+
+.mode-toggle {
+  &__icon {
+    width: 32px !important;
+    height: 32px !important;
+    display: block;
+
+    circle {
+      stroke: $color-white;
+      stroke-width: 1;
+    }
+  }
+}
