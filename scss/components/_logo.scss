@@ -1,16 +1,19 @@
-
 .logo {
-  position: absolute;
-  top: $hero-logo-top;
-  @include absolute-center-x;
-  z-index: 5;
-  
-  img {
-    height: $logo-height;
-    @include transition(opacity $transition-medium $transition-ease);
-  }
-  
-  #mg-logo {
-    @include transition(opacity $transition-medium $transition-ease);
+  display: block;
+  z-index: $z-index-header;
+
+  &__img {
+    display: block;
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+
+    &--large {
+      height: 54px;
+    }
+
+    &--hero {
+      height: 20px;
+    }
   }
 }
