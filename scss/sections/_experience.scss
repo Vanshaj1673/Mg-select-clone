@@ -1,135 +1,80 @@
-.experience-section {
+.experience {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  color: #000;
-}
+  color: $color-black;
 
-.experience-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+  &__bg {
+    @include absolute-cover;
+    z-index: 0;
+  }
 
-  img {
+  &__bg-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
-}
 
-.experience-top {
-  position: absolute;
-  top: 32px;
-  left: 32px;
-  right: 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 6;
-}
-
-.experience-section {
-  .hamburger {
-    span {
-      background: #000 !important;
-    }
-
-    &:hover span {
-      background: rgba(0, 0, 0, 0.7) !important;
-    }
+  &__header {
+    position: absolute;
+    top: 40px; // Standardized
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: $z-index-header;
   }
-}
 
-
-.experience-section {
-  .carousel,
-  .carousel-inner,
-  .carousel-item {
+  &__swiper {
     width: 100%;
     height: 100%;
-  }
-
-  .carousel {
     position: relative;
     z-index: 1;
     padding-top: 120px;
   }
-}
 
-.experience-slide {
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 120px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  &__slide {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 120px);
+    @include flex-center;
+  }
 
+  &__img {
+    width: auto;
+    max-width: 92vw;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+  }
 
-.experience-artwork {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.experience-artwork img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  max-height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-
-.experience-section {
-  .nav {
+  &__nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     width: 56px;
     height: 56px;
-    border-radius: 50%;
+    border-radius: $border-radius-circle;
     border: none;
-    background: rgba(0, 0, 0, 0.4);
+    background: $overlay-dark;
     backdrop-filter: blur(10px);
     cursor: pointer;
-    z-index: 7;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transition: background 0.3s ease, transform 0.3s ease;
+    z-index: $z-index-header;
+    @include flex-center;
+    transition: background $transition-fast $transition-ease, transform $transition-fast $transition-ease;
 
     &:hover {
-      background: rgba(0, 0, 0, 0.6);
+      background: $overlay-dark-strong;
       transform: translateY(-50%) scale(1.08);
     }
 
-    img {
-      width: 22px;
-      height: 22px;
-      filter: invert(1);
-      pointer-events: none;
+    &--prev {
+      left: 40px;
+    }
+
+    &--next {
+      right: 40px;
     }
   }
-
-  .experience-prev {
-    left: 32px;
-  }
-
-  .experience-next {
-    right: 32px;
-  }
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  display: none;
 }
