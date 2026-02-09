@@ -1,89 +1,121 @@
-.site-footer {
+.footer {
   background: $color-dark-gray;
-  color: $text-secondary;
+  color: $color-light-gray;
   padding: $spacing-3xl $spacing-4xl $spacing-2xl;
   display: flex;
   flex-direction: column;
   gap: $spacing-4xl;
-}
 
-/* ================= TOP ================= */
-
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.footer-logo {
-  height: $logo-height-footer;
-}
-
-/* ================= NEWSLETTER ================= */
-
-.newsletter {
-  max-width: 520px;
-
-  h3 {
-    font-size: $font-size-2xl;
-    font-weight: $font-weight-normal;
-    margin-bottom: $spacing-lg;
-    color: $text-light-gray;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 
-  &-form {
+  &__logo {
+    height: 42px;
+  }
+
+  &__newsletter {
+    max-width: 520px;
+  }
+
+  &__links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacing-4xl;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+
+  &__column-title {
+    font-size: $font-size-xl;
+    font-weight: 400;
+    margin-bottom: $spacing-sm;
+    color: $color-medium-gray;
+  }
+
+  &__link {
+    color: #777;
+    font-size: $font-size-base;
+    text-decoration: none;
+    transition: color $transition-fast $transition-ease;
+
+    &:hover {
+      color: $color-white;
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: $spacing-lg;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: $font-size-sm;
+    color: #777;
+  }
+
+  &__social {
+    display: flex;
+    gap: $spacing-lg;
+  }
+}
+
+.newsletter {
+  &__title {
+    font-size: $font-size-2xl;
+    font-weight: 400;
+    margin-bottom: $spacing-lg;
+    color: $color-white;
+  }
+
+  &__form {
     display: flex;
     gap: $spacing-lg;
     margin-bottom: $spacing-md;
+  }
 
-    input {
-      flex: 1;
-      padding: $btn-padding-vertical;
-      background: $bg-dark-subtle;
-      border: none;
-      color: $color-white;
-      font-size: $font-size-base;
+  &__input {
+    flex: 1;
+    padding: 18px;
+    background: #1a1a1a;
+    border: none;
+    color: $color-white;
+    font-size: $font-size-base;
 
-      &::placeholder {
-        color: $text-muted;
-      }
-
-      &:focus {
-        outline: none;
-        background: lighten($bg-dark-subtle, 3%);
-      }
+    &::placeholder {
+      color: #666;
     }
+  }
 
-    button {
-      padding: $btn-padding-vertical $btn-padding-horizontal-lg;
-      background: transparent;
-      border: $border-width solid $color-light-gray;
-      color: $color-white;
-      font-size: $font-size-sm;
-      cursor: pointer;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
+  &__submit {
+    padding: 18px 30px;
+    background: transparent;
+    border: 1px solid $color-light-gray;
+    color: $color-white;
+    @include text-uppercase-spaced;
+    cursor: pointer;
 
-      span {
-        margin-left: 6px;
-      }
-
-      &:hover {
-        background: $color-white;
-        color: $color-black;
-      }
+    &:hover {
+      background: $color-white;
+      color: $color-black;
     }
   }
 }
 
 .privacy {
   font-size: $font-size-sm;
-  color: $text-tertiary;
+  color: #777;
   display: flex;
   align-items: center;
   gap: $spacing-xs;
 
-  a {
+  &__link {
     color: $color-light-gray;
     text-decoration: underline;
 
@@ -93,56 +125,11 @@
   }
 }
 
-/* ================= LINKS ================= */
-
-.footer-links {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: $spacing-4xl;
-}
-
-.footer-column {
-  h4 {
-    font-size: $font-size-xl;
-    font-weight: $font-weight-normal;
-    margin-bottom: $spacing-xl;
-    color: $text-gray;
-  }
-
-  a {
-    display: block;
-    margin-bottom: $spacing-lg;
-    color: $text-tertiary;
-    font-size: $font-size-base;
-
-    &:hover {
-      color: $color-white;
-    }
-  }
-}
-
-/* ================= BOTTOM ================= */
-
-.footer-bottom {
-  border-top: $border-width solid $bg-dark-border;
-  padding-top: $spacing-lg;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: $font-size-sm;
-  color: $text-tertiary;
-
-  p {
-    margin: 0;
-  }
-}
-
 .social-icons {
-  display: flex;
-  gap: $spacing-lg;
-
-  a {
+  &__link {
     color: $color-light-gray;
+    text-decoration: none;
+    transition: color $transition-fast $transition-ease;
 
     &:hover {
       color: $color-white;
