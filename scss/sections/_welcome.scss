@@ -1,92 +1,80 @@
-
-
-.welcome-section {
+.welcome {
   background: $color-off-white;
-  color: $text-dark;
-  @include flex-column-center;
+  color: $color-black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding: 40px 0 0 0;
+  position: relative;
+  overflow: hidden;
 
-
-
-  .welcome-small {
+  &__eyebrow {
     font-size: $font-size-md;
     @include text-uppercase-spaced;
-    margin-bottom: $spacing-lg;
+    margin-bottom: 8px;
   }
 
-  .welcome-logo {
-    height: $logo-height-small;
-    margin-bottom: $spacing-2xl;
+  &__logo {
+    height: 40px;
+    margin-bottom: 80px;
   }
 
-
-  .welcome-text-wrapper {
-    position: relative;
-    height: 160px;
-    margin-bottom: $spacing-3xl;
-    width: 100%;
-  }
-
-  .welcome-title,
-  .welcome-description {
-    position: absolute;
-    width: 100%;
-    @include absolute-center-x;
+  &__text-wrapper {
     text-align: center;
-    @include transition-slow(opacity);
-    @include transition-slow(transform);
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+    position: relative;
+    z-index: 10;
   }
 
-  .welcome-title {
-    font-size: $font-size-5xl;
-    font-weight: $font-weight-normal;
-    opacity: 1;
-    transform: translateX(-50%);
+  &__title {
+    font-size: 40px;
+    font-weight: 400;
+    color: $color-black !important;
+    line-height: 1.2;
+    margin: 0;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative;
+    z-index: 11;
   }
 
-  .welcome-description {
-    opacity: 0;
-    max-width: 680px;
-    font-size: $font-size-lg;
-    line-height: 1.6;
-    transform: translateX(-50%);
-  }
-
-
-
-  .luxury-carousel {
+  &__carousel {
     width: 100%;
     overflow: hidden;
-    padding-bottom: $spacing-xl;
+    margin-top: auto;
   }
 
-  .luxury-track {
+  &__carousel-track {
     display: flex;
-    align-items: center;
-    gap: 16px; 
+    align-items: flex-end;
+    gap: 16px;
     width: max-content;
-
     animation: luxury-marquee 40s linear infinite;
   }
 
-  .luxury-slide {
+  &__carousel-slide {
     flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     img {
       display: block;
       object-fit: cover;
-      border-radius: 0;
     }
 
- 
     &:nth-child(odd) img {
       width: 200px;
       height: 100px;
     }
 
- 
     &:nth-child(even) img {
       width: 150px;
       height: 200px;
@@ -94,12 +82,11 @@
   }
 }
 
-
-
 @keyframes luxury-marquee {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }
