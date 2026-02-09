@@ -1,157 +1,151 @@
-
-
 .site-footer {
-  min-height: $viewport-height;
   background: $color-dark-gray;
   color: $text-secondary;
   padding: $spacing-3xl $spacing-4xl $spacing-2xl;
-  @include flex-column;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4xl;
+}
+
+/* ================= TOP ================= */
+
+.footer-top {
+  display: flex;
   justify-content: space-between;
-  
- 
-  
-  .footer-top {
-    @include flex-between;
-    align-items: flex-start;
-  }
-  
-  .footer-logo {
-    height: $logo-height-footer;
-  }
-  
+  align-items: flex-start;
+}
 
-  
-  .newsletter {
-    max-width: $max-width-newsletter;
-    
-    h3 {
-      font-size: $font-size-2xl;
-      font-weight: $font-weight-normal;
-      margin-bottom: $spacing-lg;
-      color: $text-light-gray;
-    }
-    
-    &-form {
-      display: flex;
-      gap: $spacing-lg;
-      margin-bottom: 14px;
-      
-      input {
-        flex: 1;
-        padding: $btn-padding-vertical;
-        background: $bg-dark-subtle;
-        border: none;
-        color: $color-white;
-        font-size: $font-size-base;
-        @include transition-default(background);
-        
-        &::placeholder {
-          color: $text-muted;
-        }
-        
-        &:focus {
-          outline: none;
-          background: lighten($bg-dark-subtle, 3%);
-        }
-      }
-      
-      button {
-        padding: $btn-padding-vertical $btn-padding-horizontal-lg;
-        background: transparent;
-        border: $border-width solid $color-light-gray;
-        color: $color-white;
-        font-size: $font-size-sm;
-        @include text-uppercase-spaced;
-        cursor: pointer;
-        @include transition-default;
-        
-        span {
-          margin-left: 6px;
-        }
-        
-        &:hover {
-          background: $color-white;
-          color: $color-black;
-        }
-      }
-    }
+.footer-logo {
+  height: $logo-height-footer;
+}
+
+/* ================= NEWSLETTER ================= */
+
+.newsletter {
+  max-width: 520px;
+
+  h3 {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-normal;
+    margin-bottom: $spacing-lg;
+    color: $text-light-gray;
   }
-  
-  .privacy {
-    font-size: $font-size-sm;
-    color: $text-tertiary;
+
+  &-form {
     display: flex;
-    align-items: center;
-    cursor: pointer;
-    
-    input {
-      margin-right: $spacing-xs;
-      cursor: pointer;
-    }
-    
-    a {
-      color: $color-light-gray;
-      text-decoration: underline;
-      @include transition-default(color);
-      
-      &:hover {
-        color: $color-white;
-      }
-    }
-  }
-  
-  
-  
-  .footer-links {
-    @include grid-columns(4);
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-  
-  .footer-column {
-    h4 {
-      font-size: $font-size-2xl;
-      font-weight: $font-weight-normal;
-      margin-bottom: $spacing-xl;
-      color: $text-gray;
-    }
-    
-    a {
-      display: block;
-      margin-bottom: $spacing-lg;
-      color: $text-tertiary;
-      font-size: $font-size-base;
-      @include transition-default(color);
-      
-      &:hover {
-        color: $color-white;
-      }
-    }
-  }
-  
+    gap: $spacing-lg;
+    margin-bottom: $spacing-md;
 
-  
-  .footer-bottom {
-    border-top: $border-width solid $bg-dark-border;
-    padding-top: $spacing-lg;
-    @include flex-between;
-    font-size: $font-size-sm;
-    color: $text-tertiary;
-    
-    p {
-      margin: 0;
+    input {
+      flex: 1;
+      padding: $btn-padding-vertical;
+      background: $bg-dark-subtle;
+      border: none;
+      color: $color-white;
+      font-size: $font-size-base;
+
+      &::placeholder {
+        color: $text-muted;
+      }
+
+      &:focus {
+        outline: none;
+        background: lighten($bg-dark-subtle, 3%);
+      }
+    }
+
+    button {
+      padding: $btn-padding-vertical $btn-padding-horizontal-lg;
+      background: transparent;
+      border: $border-width solid $color-light-gray;
+      color: $color-white;
+      font-size: $font-size-sm;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+
+      span {
+        margin-left: 6px;
+      }
+
+      &:hover {
+        background: $color-white;
+        color: $color-black;
+      }
     }
   }
-  
-  .social-icons {
-    a {
-      margin-left: $spacing-lg;
-      color: $color-light-gray;
-      @include transition-default(color);
-      
-      &:hover {
-        color: $color-white;
-      }
+}
+
+.privacy {
+  font-size: $font-size-sm;
+  color: $text-tertiary;
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+
+  a {
+    color: $color-light-gray;
+    text-decoration: underline;
+
+    &:hover {
+      color: $color-white;
+    }
+  }
+}
+
+/* ================= LINKS ================= */
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $spacing-4xl;
+}
+
+.footer-column {
+  h4 {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-normal;
+    margin-bottom: $spacing-xl;
+    color: $text-gray;
+  }
+
+  a {
+    display: block;
+    margin-bottom: $spacing-lg;
+    color: $text-tertiary;
+    font-size: $font-size-base;
+
+    &:hover {
+      color: $color-white;
+    }
+  }
+}
+
+/* ================= BOTTOM ================= */
+
+.footer-bottom {
+  border-top: $border-width solid $bg-dark-border;
+  padding-top: $spacing-lg;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: $font-size-sm;
+  color: $text-tertiary;
+
+  p {
+    margin: 0;
+  }
+}
+
+.social-icons {
+  display: flex;
+  gap: $spacing-lg;
+
+  a {
+    color: $color-light-gray;
+
+    &:hover {
+      color: $color-white;
     }
   }
 }
