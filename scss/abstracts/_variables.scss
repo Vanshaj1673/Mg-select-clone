@@ -1,33 +1,47 @@
-
+// Colors
 $color-black: #000000;
 $color-white: #ffffff;
 $color-off-white: #f5f5f5;
 $color-dark-gray: #111111;
 $color-medium-gray: #999999;
 $color-light-gray: #b5b5b5;
+$color-dark-gray-alt: #1a1a1a;
 
+// Text Color Aliases (for backward compatibility)
+$text-primary: $color-white;
+$text-secondary: #eeeeee;
+$text-gray: $color-medium-gray;
+$text-dark: $color-black;
+$text-muted: #666666;
+$text-tertiary: #777777;
+$text-light-gray: $color-light-gray;
 
+// Overlays & Opacity Colors
 $overlay-dark: rgba(0, 0, 0, 0.4);
 $overlay-dark-strong: rgba(0, 0, 0, 0.6);
 $border-light: rgba(255, 255, 255, 0.6);
+$border-dark: rgba(0, 0, 0, 0.1);
 $bg-transparent-light: rgba(255, 255, 255, 0.3);
+$bg-transparent-dark: rgba(0, 0, 0, 0.03);
 $bg-dark-subtle: #1a1a1a;
-$bg-dark-border: #2a2a2a;
+$bg-dark-border: rgba(255, 255, 255, 0.05);
 
-
-$text-primary: $color-white;
-$text-secondary: #b5b5b5;
-$text-tertiary: #777777;
-$text-muted: #666666;
-$text-dark: #000000;
-$text-gray: #8a8a8a;
-$text-light-gray: #9a9a9a;
-
-
-
+// Fonts
 $font-family-primary: "Sequel", sans-serif;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
 
+// Letter Spacing
+$letter-spacing-tight: 0.05em;
+$letter-spacing-normal: 0.1em;
+$letter-spacing-wide: 0.2em;
 
+// Viewport
+$viewport-height: 100vh;
+
+// Font Sizes
 $font-size-xs: 12px;
 $font-size-sm: 14px;
 $font-size-base: 15px;
@@ -39,15 +53,12 @@ $font-size-3xl: 30px;
 $font-size-4xl: 44px;
 $font-size-5xl: 56px;
 
+// Border Radii
+$border-radius-sm: 4px;
+$border-radius-circle: 50%;
+$border-width: 1px;
 
-$font-weight-light: 300;
-$font-weight-normal: 400;
-
-
-$letter-spacing-tight: 2px;
-
-
-
+// Spacing
 $spacing-xs: 8px;
 $spacing-sm: 10px;
 $spacing-md: 15px;
@@ -57,71 +68,42 @@ $spacing-2xl: 40px;
 $spacing-3xl: 60px;
 $spacing-4xl: 80px;
 
-
-
-$viewport-height: 100vh;
-$max-width-content: 900px;
-$max-width-newsletter: 520px;
-
-
-$hero-logo-top: 30px;
-$hero-content-bottom: 60px;
-$hero-content-left: 80px;
-
-
-$transition-fast: 0.3s;
-$transition-medium: 0.4s;
-$transition-slow: 0.6s;
-$transition-ease: ease;
-$transition-ease-in-out: ease-in-out;
-
-
-
-
-$logo-height: 45px;
-$logo-height-small: 40px;
-$logo-height-footer: 42px;
-
-$icon-size-sm: 28px;
-$icon-size-md: 36px;
-$icon-size-nav: 56px;
-$icon-size-arrow: 70px;
-
-
-$car-image-width: 520px;
-$car-image-max-width: 40vw;
-
-
-$experience-image-width: 1050px;
-$experience-image-max-width: 92vw;
-$experience-image-max-height: 80vh;
-
-
-$heritage-card-min-width: 220px;
-$heritage-card-large-min-width: 420px;
-
-
-$btn-width-cta: 420px;
-$btn-padding-vertical: 18px;
+// Button Sizes
+$btn-padding-vertical: 15px;
 $btn-padding-horizontal: 25px;
 $btn-padding-horizontal-lg: 30px;
+$btn-width-cta: 420px;
 
+// Icon Sizes
+$icon-size-sm: 24px;
+$icon-size-nav: 56px;
 
+// UI Constants
+$hero-logo-top: 40px;
+$hero-content-bottom: 80px;
+$hero-content-left: 80px;
+$max-width-content: 600px;
+$logo-height: 54px;
+$logo-height-small: 32px;
+$logo-height-footer: 42px;
 
-$border-width: 1px;
-$border-radius-sm: 4px;
-$border-radius-circle: 50%;
-
-
-
-$z-index-background: -2;
-$z-index-overlay: -1;
-$z-index-base: 0;
-$z-index-content: 1;
-
-
-
+// Breakpoints
 $breakpoint-mobile: 480px;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
 $breakpoint-wide: 1440px;
+
+// Transitions
+$transition-fast: 0.3s;
+$transition-medium: 0.4s;
+$transition-slow: 0.6s;
+$transition-ease: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+// Z-Indexes
+$z-index-background: -2;
+$z-index-overlay: -1;
+$z-index-base: 0;
+$z-index-content: 1;
+$z-index-header: 10;
+$z-index-navigation: 9999;
+$z-index-modal: 9000;
