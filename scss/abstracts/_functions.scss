@@ -1,49 +1,70 @@
+@function rem($px, $base: 16px) {
+  @if unit($px) != "px" {
+    @error "Invalid unit";
+  }
 
+  @if unit($base) != "px" {
+    @error "Invalid base unit";
+  }
 
-/// Convert px to rem
-/// @param {Number} $px - Pixel value to convert
-/// @param {Number} $base - Base font size (default: 16px)
-/// @return {Number} - Rem value
-@function rem($px, $base: 16) {
-  @return #{$px / $base}rem;
+  @return ($px / $base) * 1rem;
 }
 
-/// Convert px to em
-/// @param {Number} $px - Pixel value to convert
-/// @param {Number} $base - Base font size (default: 16px)
-/// @return {Number} - Em value
-@function em($px, $base: 16) {
-  @return #{$px / $base}em;
+@function em($px, $base: 16px) {
+  @if unit($px) != "px" {
+    @error "Invalid unit";
+  }
+
+  @if unit($base) != "px" {
+    @error "Invalid base unit";
+  }
+
+  @return ($px / $base) * 1em;
 }
 
-/// Calculate percentage
-/// @param {Number} $target - Target value
-/// @param {Number} $context - Context value
-/// @return {Number} - Percentage value
 @function percent($target, $context) {
-  @return percentage($target / $context);
+  @if $context == 0 {
+    @error "Division by zero";
+  }
+
+  @return ($target / $context) * 100%;
 }
 
-/// Get z-index from map
-/// @param {String} $key - Key name for z-index
-/// @return {Number} - Z-index value
+$z-indexes: (
+  background: -2,
+  overlay: -1,
+  base: 0,
+  content: 1,
+  header: 10,
+  dropdown: 20,
+  modal: 100,
+  toast: 1000
+) !default;
+
 @function z($key) {
-  $z-indexes: (
-    background: -2,
-    overlay: -1,
-    base: 0,
-    content: 1,
-    header: 10,
-    modal: 100,
-  );
-  
-  @return map-get($z-indexes, $key);
+  @if map-has-key($z-indexes, $key) {
+    @return map-get($z-indexes, $key);
+  }
+
+  @error "Invalid z-index key";
 }
 
-/// Lighten color with opacity
-/// @param {Color} $color - Base color
-/// @param {Number} $amount - Opacity amount (0-1)
-/// @return {Color} - RGBA color
-@function fade($color, $amount) {
-  @return rgba($color, $amount);
+@function fade($color, $alpha) {
+  @if type-of($color) != "color" {
+    @error "Invalid color";
+  }
+
+  @if $alpha < 0 or $alpha > 1 {
+    @error "Invalid opacity";
+  }
+
+  @return rgba($color, $alpha);
+}
+
+@function tint($color, $amount) {
+  @return mix(white, $color, $amount);
+}
+
+@function shade($color, $amount) {
+  @return mix(black, $color, $amount);
 }
