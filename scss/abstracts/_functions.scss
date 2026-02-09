@@ -1,70 +1,7 @@
 @function rem($px, $base: 16px) {
-  @if unit($px) != "px" {
-    @error "Invalid unit";
-  }
-
-  @if unit($base) != "px" {
-    @error "Invalid base unit";
-  }
-
   @return ($px / $base) * 1rem;
 }
 
 @function em($px, $base: 16px) {
-  @if unit($px) != "px" {
-    @error "Invalid unit";
-  }
-
-  @if unit($base) != "px" {
-    @error "Invalid base unit";
-  }
-
   @return ($px / $base) * 1em;
-}
-
-@function percent($target, $context) {
-  @if $context == 0 {
-    @error "Division by zero";
-  }
-
-  @return ($target / $context) * 100%;
-}
-
-$z-indexes: (
-  background: -2,
-  overlay: -1,
-  base: 0,
-  content: 1,
-  header: 10,
-  dropdown: 20,
-  modal: 100,
-  toast: 1000
-) !default;
-
-@function z($key) {
-  @if map-has-key($z-indexes, $key) {
-    @return map-get($z-indexes, $key);
-  }
-
-  @error "Invalid z-index key";
-}
-
-@function fade($color, $alpha) {
-  @if type-of($color) != "color" {
-    @error "Invalid color";
-  }
-
-  @if $alpha < 0 or $alpha > 1 {
-    @error "Invalid opacity";
-  }
-
-  @return rgba($color, $alpha);
-}
-
-@function tint($color, $amount) {
-  @return mix(white, $color, $amount);
-}
-
-@function shade($color, $amount) {
-  @return mix(black, $color, $amount);
 }
