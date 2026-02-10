@@ -1,7 +1,6 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 const heroVideo = document.querySelector(".hero__video");
 const soundToggle = document.getElementById("soundToggle");
 const soundIcon = document.getElementById("soundIcon");
@@ -14,7 +13,6 @@ if (soundToggle && heroVideo) {
     soundIcon.src = isMuted ? "assets/svg/sound_off.svg" : "assets/svg/sound_on.svg";
   });
 }
-
 
 const carData = {
   cyberster: {
@@ -37,7 +35,6 @@ const carData = {
 
 let isNightMode = false;
 
-
 function preloadImages() {
   Object.values(carData).forEach(car => {
     new Image().src = car.dayCar;
@@ -47,7 +44,6 @@ function preloadImages() {
   });
 }
 preloadImages();
-
 
 const carSwiper = new Swiper('.inventory__swiper', {
   effect: 'slide',
@@ -123,6 +119,7 @@ function updateProgressBar(realIndex) {
   progressFill.style.width = realIndex === 0 ? '50%' : '100%';
 }
 
+
 const modeToggle = document.getElementById("modeToggle");
 const sliderLogo = document.getElementById("sliderLogo");
 
@@ -177,14 +174,12 @@ function applyMode() {
   }
 }
 
-
 if (carSwiper) {
   updateBackground(carSwiper.realIndex);
   updateCarContent(carSwiper.realIndex);
   updateProgressBar(carSwiper.realIndex);
 }
 applyMode();
-
 
 const experienceSwiper = new Swiper('.experience__swiper', {
   slidesPerView: 1,
@@ -195,6 +190,7 @@ const experienceSwiper = new Swiper('.experience__swiper', {
     prevEl: '#expPrev',
   }
 });
+
 
 
 const hamburger = document.querySelector(".hamburger");
@@ -266,8 +262,6 @@ carItems.forEach(item => {
     }
   });
 });
-
-
 
 const heritageSwiper = new Swiper('.heritage__swiper', {
   slidesPerView: 'auto',
