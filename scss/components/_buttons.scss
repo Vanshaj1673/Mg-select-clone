@@ -1,4 +1,3 @@
-// Hamburger
 .hamburger {
   position: fixed;
   top: 40px;
@@ -52,7 +51,7 @@
   }
 }
 
-// Modal (Menu Overlay)
+
 .modal {
   position: fixed;
   inset: 0;
@@ -112,7 +111,7 @@
   }
 
   &__close {
-    display: none; // Controlled by hamburger
+    display: none;
   }
 
 
@@ -148,7 +147,7 @@
   }
 
   &__content {
-    display: none; // Hidden by default
+    display: none;
     grid-template-columns: 350px 1fr;
     flex: 1;
     overflow: hidden;
@@ -289,7 +288,7 @@
   }
 }
 
-// Global Buttons
+
 .cta-btn {
   padding: $spacing-md $btn-padding-horizontal-lg;
   border: $border-width solid $color-white;
@@ -334,7 +333,7 @@
   justify-content: space-between;
   cursor: pointer;
   transition: all $transition-fast $transition-ease;
-  margin-bottom: 10px; // Kept from original .box-btn
+  margin-bottom: 10px;
 
   &:hover {
     background: $color-black;
@@ -362,7 +361,7 @@
   position: absolute;
   bottom: $spacing-lg;
   left: $spacing-lg;
-  z-index: 10; // Ensure visible
+  z-index: 10;
 
   &__trigger {
     @include button-reset;
@@ -378,7 +377,7 @@
     width: $icon-size-sm;
     filter: invert(1);
 
-    // Day/Night logic might change this filter
+
   }
 }
 
