@@ -111,7 +111,7 @@
   &__year {
     font-size: 2.2vh;
     margin-bottom: 1.5vh;
-    color: $color-light-gray; // #b5b5b5
+    color: $color-light-gray; 
     transition: all $transition-fast $transition-ease;
     font-weight: 300;
 
@@ -192,3 +192,4 @@
     }
   }
 }
+
