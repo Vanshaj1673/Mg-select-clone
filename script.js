@@ -191,8 +191,6 @@ const experienceSwiper = new Swiper('.experience__swiper', {
   }
 });
 
-
-
 const hamburger = document.querySelector(".hamburger");
 const menuOverlay = document.getElementById("menuOverlay");
 const modalTabs = document.querySelectorAll(".modal__tab");
@@ -227,17 +225,24 @@ if (hamburger) hamburger.addEventListener("click", toggleMenu);
 modalTabs.forEach(tab => {
   tab.addEventListener("click", () => {
     const targetTab = tab.getAttribute("data-tab");
+
     modalTabs.forEach(t => t.classList.remove("active"));
     tab.classList.add("active");
 
     modalContents.forEach(content => {
       content.classList.remove("active");
-      if (content.id === `menu${targetTab.charAt(0).toUpperCase() + targetTab.slice(1)}Content`) {
+
+      if (targetTab === "cars" && content.id === "menuCarsContent") {
+        content.classList.add("active");
+      } else if (targetTab === "about" && content.id === "menuAboutContent") {
+        content.classList.add("active");
+      } else if (targetTab === "contact" && content.id === "menuContactContent") {
         content.classList.add("active");
       }
     });
   });
 });
+
 
 carItems.forEach(item => {
   item.addEventListener("click", () => {
